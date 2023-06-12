@@ -18,7 +18,7 @@
             <div class="col-lg-4 mt-4 pt-2">
                 <div class="blog-item p-4 box-shadow">
                     <div class="blog-image">
-                        <img src="images/blog/img-1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/blog/img-1.png')}}" alt="" class="img-fluid">
                         <div class="blog-image-icon bg-blue">
                             <i class="mdi mdi-lan fs-24"></i>
                         </div>
@@ -39,7 +39,7 @@
             <div class="col-lg-4 mt-4 pt-2">
                 <div class="blog-item p-4 box-shadow">
                     <div class="blog-image">
-                        <img src="images/blog/img-2.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/blog/img-2.png')}}" alt="" class="img-fluid">
                         <div class="blog-image-icon bg-secondary">
                             <i class="mdi mdi-responsive fs-24"></i>
                         </div>
@@ -60,7 +60,7 @@
             <div class="col-lg-4 mt-4 pt-2">
                 <div class="blog-item p-4 box-shadow">
                     <div class="blog-image">
-                        <img src="images/blog/img-3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/blog/img-3.png')}}" alt="" class="img-fluid">
                         <div class="blog-image-icon bg-primary">
                             <i class="mdi mdi-vector-combine fs-24"></i>
                         </div>
