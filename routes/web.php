@@ -19,4 +19,4 @@ use App\Http\Controllers\HomeController;
 // });
 
 
-Route::get('/', [HomeController::class, 'index'])->name('homess');
+Route::get('/', [HomeController::class, 'index'])->name('home');
