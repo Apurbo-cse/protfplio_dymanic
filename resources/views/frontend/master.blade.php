@@ -31,6 +31,9 @@
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @stack('css')
 
@@ -40,8 +43,10 @@
 
     <!-- light-dark mode button -->
     <a href="javascript: void(0);" id="mode" class="mode-btn text-white rounded-end">
-        <i class="uil uil-brightness mode-dark mx-auto"></i>
-        <i class="uil uil-moon bx-spin mode-light"></i>
+        <!-- <i class="uil uil-brightness ">*</i> -->
+        <i class="fa-solid fa-moon mode-dark  btn-m"></i>
+        <i class="fa-regular fa-sun  mode-light btn-m"></i>
+        <!-- <i class="uil uil-moon bx-spin mode-light">☀️</i> -->
     </a>
 
 

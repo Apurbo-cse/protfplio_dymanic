@@ -4,7 +4,7 @@
         <div class="container">
 
             <div class="shape-1">
-                <img src="images/testi/shape.png" alt="" class="img-fluid">
+                <img src="{{ asset('frontend/images/testi/shape.png')}}" alt="" class="img-fluid">
             </div>
 
             <div class="contact-item">

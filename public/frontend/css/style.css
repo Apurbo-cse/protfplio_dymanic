@@ -1,0 +1,9 @@
+.btn-m{
+    margin:0 !important;
+    padding: auto;
+    color:rgb(214, 214, 214);
+    font-size:15px;
+    display:flex;
+    padding-top: 12px;
+
+}
