@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
         <div class="container-fluid custom-container">
             <a class="navbar-brand logo text-uppercase" href="index.html">
-                <img src="images/logo.png" class="logo-light ps-4" alt="" height="34">
-                <img src="images/logo.png" class="logo-dark  ps-4" alt="" height="34">
+                <img src="{{ asset('frontend/images/logo.png')}}" class="logo-light ps-4" alt="" height="34">
+                <img src="{{ asset('frontend/images/logo.png')}}" class="logo-dark  ps-4" alt="" height="34">
             </a>
 
             <button class="navbar-toggler me-3 order-2 ms-4" type="button" data-bs-toggle="collapse"
@@ -40,7 +40,7 @@
                 </ul>
                 <!--end navbar-nav-->
                 <div class="ms-auto ps-2 ps-lg-0">
-                    <a href="Apurbo.pdf" download class="btn btn-dark rounded-pill my-3 my-lg-0" target="_blank" >CV Download</a>
+                    <a href="{{ asset('frontend/pdf/resume_of_apurbo.pdf')}}" download class="btn btn-dark rounded-pill my-3 my-lg-0" target="_blank" >CV Download</a>
                 </div>
             </div>
         </div>
