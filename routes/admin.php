@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +17,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/dashboard', function () {
+    return view('admin.pages.home.index');
+})->middleware(['auth'])->name('admin.dashboard');
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Auth::routes();
-require __DIR__.'/admin.php';
+Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth']], function () {
 
 
+});
