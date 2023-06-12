@@ -18,7 +18,7 @@
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
                 <div class="counter-item">
                     <div class="counter-icon text-center">
-                        <img src="images/counter/heart.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/counter/heart.png')}}" alt="" class="img-fluid">
                     </div>
                     <div class="counter-velue text-center mt-3">
                         <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="800">0</h2><span
@@ -33,7 +33,7 @@
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
                 <div class="counter-item">
                     <div class="counter-icon text-center">
-                        <img src="images/counter/blueprint.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/counter/blueprint.png')}}" alt="" class="img-fluid">
                     </div>
                     <div class="counter-velue text-center mt-3">
                         <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="400">0</h2>
@@ -47,7 +47,7 @@
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
                 <div class="counter-item">
                     <div class="counter-icon text-center">
-                        <img src="images/counter/star.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/counter/star.png')}}" alt="" class="img-fluid">
                     </div>
                     <div class="counter-velue text-center mt-3">
                         <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="1000">0</h2><span
@@ -62,7 +62,7 @@
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
                 <div class="counter-item">
                     <div class="counter-icon text-center">
-                        <img src="images/counter/idea.png" alt="" class="img-fluid">
+                        <img src="{{ asset('frontend/images/counter/idea.png')}}" alt="" class="img-fluid">
                     </div>
                     <div class="counter-velue text-center mt-3">
                         <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="20">0</h2><span
