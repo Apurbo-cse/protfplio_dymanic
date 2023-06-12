@@ -12,7 +12,7 @@
                                         <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
                                         <div class="home-title mb-0 fw-bold h1">
                                             <span class="typewrite " data-period="2000"
-                                                data-type='[ "Apurbo Roy","Software Developer","Javascript | Reactjs | React Native" ]'>
+                                                data-type='[ "Apurbo Roy","Software Developer","Javascript | Reactjs | React Native","as" ]'>
                                                 <span class="wrap text-dark"></span>
                                             </span>
                                         </div>
