@@ -82,7 +82,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Home::findOrFail($id);
+        return view('admin.pages.home.edit',compact('data'));
     }
 
     /**
