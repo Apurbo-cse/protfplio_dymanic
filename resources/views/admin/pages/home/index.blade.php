@@ -47,21 +47,22 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Apurbo Roy </td>
-                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, necessitatibus?</td>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
+                                            necessitatibus?</td>
                                         <td> Image</td>
                                         <td>Active</td>
                                         <td>Edit Delete</td>
                                     </tr>
-                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
-                                        <th>CSS grade</th>
+                                        <th>Sl No</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>
