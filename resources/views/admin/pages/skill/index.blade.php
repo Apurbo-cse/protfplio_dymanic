@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Skill</a></li>
                         <li class="breadcrumb-item active">DataTables</li>
                     </ol>
                 </div>
@@ -56,11 +56,11 @@
                                             @endif
                                         </td>
                                         <td class="d-flex justify-content-around">
-                                            <a href="{{ route('admin.home.edit',$data->id) }}"><i
+                                            <a href="{{ route('admin.skill.edit',$data->id) }}"><i
                                                     class="fa-regular fa-pen-to-square text-info "></i></a>
 
                                             <form method="post"
-                                                action="{{ route('admin.home.destroy',$data->id) }}">
+                                                action="{{ route('admin.skill.destroy',$data->id) }}">
                                                 @csrf
                                                 @method('delete')
                                                 <i class="fa-solid fa-trash-can text-danger"
