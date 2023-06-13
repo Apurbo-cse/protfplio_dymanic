@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">skill</a></li>
                         <li class="breadcrumb-item active">Validation</li>
                     </ol>
                 </div>
@@ -33,16 +33,16 @@
 
 
                         <form id="quickForm"
-                            action="{{ route('admin.home.update', $data->id) }}" method="post"
+                            action="{{ route('admin.skill.update', $data->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" value="{{ $data->name }}" name="name" class="form-control"
+                                    <input type="text" value="{{ $data->title }}" name="title" class="form-control"
                                         id="exampleInputEmail1" placeholder="Enter email">
-                                    @error('name')
+                                    @error('title')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -54,31 +54,6 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-
-
-                                            <input type="file" class="custom-file-input" name="image"
-                                                id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
-
-
-                                    </div>
-                                    @error('image')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                    @if($data->image != null)
-                                        <img src="{{ asset($data->image) }}" width="20%" height="20%">
-                                    @endif
-                                </div>
-
 
                                 <div class="form-group d-flex">
 
