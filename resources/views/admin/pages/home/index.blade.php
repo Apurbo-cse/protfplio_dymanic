@@ -50,8 +50,11 @@
                                         <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio,
                                             necessitatibus?</td>
                                         <td> Image</td>
-                                        <td>Active</td>
-                                        <td>Edit Delete</td>
+                                        <td><span class="badge bg-danger">Inactive</span></td>
+                                        <td>
+                                            <a href=""><i class="fa-regular fa-pen-to-square text-info mx-3"></i></a>
+                                            <a href=""> <i class="fa-solid fa-trash-can text-danger"></i></a>
+                                        </td>
                                     </tr>
 
                                 </tbody>
@@ -74,5 +77,7 @@
             </div>
         </div>
     </section>
+
+</div>
 
     @endsection
