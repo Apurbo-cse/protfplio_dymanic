@@ -26,7 +26,7 @@
 
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
-                            <h3 class="card-title"><button class="btn btn-info ">New Create</button></h3>
+                            <h3 class="card-title"><a href="{{ route('admin.skill.create')}}" class="btn btn-info ">New Create</a></h3>
                         </div>
 
                         <div class="card-body">
@@ -75,7 +75,6 @@
                                         <th>Sl No</th>
                                         <th>Name</th>
                                         <th>Description</th>
-                                        <th>Image</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
