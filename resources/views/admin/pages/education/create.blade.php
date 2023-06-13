@@ -57,19 +57,14 @@
                                     @enderror
                                 </div>
 
-
-
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Description</label>
-                                    <textarea id="summernote">
-                Place <em>some</em> <u>text</u> <strong>here</strong>
-              </textarea>
-                                    <input type="text" name="description" class="form-control"
-                                        placeholder="Enter description">
+                                    <textarea id="summernote" name="description" class="form-control" rows="5" placeholder="Description">{{ old('description') }}</textarea>
                                     @error('description')
-                                        <span class="text-danger">{{ $message }}</span>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+
                                 <div class="form-group d-flex">
                                     <div class="custom-control custom-radio">
                                         <input class="custom-control-input " type="radio" id="r1" name="status"
