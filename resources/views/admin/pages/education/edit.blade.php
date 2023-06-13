@@ -8,12 +8,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Validation</h1>
+                    <h1>Update Education</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">skill</a></li>
-                        <li class="breadcrumb-item active">Validation</li>
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Education Edit</li>
                     </ol>
                 </div>
             </div>
@@ -33,13 +33,13 @@
 
 
                         <form id="quickForm"
-                            action="{{ route('admin.skill.update', $data->id) }}" method="post"
+                            action="{{ route('admin.education.update', $data->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
+                                    <label for="exampleInputEmail1">Title</label>
                                     <input type="text" value="{{ $data->title }}" name="title" class="form-control"
                                         id="exampleInputEmail1" placeholder="Enter email">
                                     @error('title')
@@ -47,12 +47,30 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Description</label>
-                                    <input type="text" value="{{ $data->description }}" name="description"
-                                        class="form-control" placeholder="Enter description">
-                                    @error('description')
+                                    <label for="exampleInputEmail1">Compnay ( Duration )</label>
+                                    <input type="text" value="{{ $data->company }}" name="company" class="form-control"
+                                        id="exampleInputEmail1" placeholder="Enter email">
+                                    @error('company')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Address</label>
+                                    <input type="text" value="{{ $data->location }}" name="location" class="form-control"
+                                        id="exampleInputEmail1" placeholder="Enter email">
+                                    @error('location')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Description</label>
+
+                                    <textarea id="summernote" name="description" class="form-control" rows="5" placeholder="Description">{!!$data->description!!}</textarea>
+                                    @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                    
                                 </div>
 
                                 <div class="form-group d-flex">
