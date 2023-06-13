@@ -15,7 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.home.index');
+        $homes= Home::orderBy('created_at', 'ASC')->paginate(20);
+        return view('admin.pages.home.index',compact('homes'));
     }
 
     /**
