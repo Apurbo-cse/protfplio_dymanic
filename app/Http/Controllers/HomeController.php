@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         $home = DB::table('homes')->where('status', '1')->get();
         $skill = DB::table('skills')->where('status', '1')->get();
-        $education = DB::table('educations')->where('status', '1')->get();
-        return view('frontend.master',compact('home', 'education'));
+        $education = DB::table('education')->where('status', '1')->get();
+        return view('frontend.master',compact('home', 'skill', 'education'));
     }
 }
