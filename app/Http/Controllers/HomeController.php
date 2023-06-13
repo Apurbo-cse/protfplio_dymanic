@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = DB::table('homes')->where('status', '1')->get();
-        return view('frontend.master',compact('data'));
+        $home = DB::table('homes')->where('status', '1')->get();
+        return view('frontend.master',compact('home'));
     }
 }
