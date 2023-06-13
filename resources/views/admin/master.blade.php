@@ -7,6 +7,7 @@
     <title>AdminLTE 3 | Dashboard</title>
 
     @include('admin.include.header_link')
+    @yield('table_script')
 
 </head>
 

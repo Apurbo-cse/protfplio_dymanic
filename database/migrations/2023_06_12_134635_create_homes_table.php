@@ -16,9 +16,9 @@ class CreateHomesTable extends Migration
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('designation');
+            $table->longText('description');
             $table->string('image');
-            $table->enum('status', [0,1]);
+            $table->string('status');
             $table->timestamps();
         });
     }
