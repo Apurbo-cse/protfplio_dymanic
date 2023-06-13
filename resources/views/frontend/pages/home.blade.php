@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="home-slider" id="home-slider">
-                        
+                    @foreach ( $home as $data)
                         <div class="item">
                             <div class="row align-items-center">
-                            @foreach ( $home as $data)
+                           
                                 <div class="col-lg-6">
                                     <div class="content-item">
                                         <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
@@ -74,9 +74,10 @@
                                         <img src="{{asset($data->image)}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
-                            @endforeach
+                           
                             </div>
                         </div>
+                    @endforeach
                     </div>
                 </div>
             </div>
