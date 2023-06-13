@@ -31,7 +31,6 @@
 
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
-
                                 <thead>
                                     <tr>
                                         <th>Sl No</th>
@@ -42,32 +41,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $serialNumber = 1;
+                                    @endphp
                                     @foreach($skill as $data)
-                                    <tr>
-                                        <td>1</td>
-                                        <td>{{ $data->title }}</td>
-                                        <td>{{ $data->description }}</td>
-                                        
-                                        <td>
-                                            @if($data->status == 0)
-                                            <span class="badge bg-danger">Inactive</span>
-                                            @else
-                                            <span class="badge bg-success">Active</span>
-                                            @endif
-                                        </td>
-                                        <td class="d-flex justify-content-around">
-                                            <a href="{{ route('admin.skill.edit',$data->id) }}"><i
-                                                    class="fa-regular fa-pen-to-square text-info "></i></a>
-
-                                            <form method="post"
-                                                action="{{ route('admin.skill.destroy',$data->id) }}">
-                                                @csrf
-                                                @method('delete')
-                                                <i class="fa-solid fa-trash-can text-danger"
-                                                    onclick="return confirm('Are you confirm to delete?')"></i>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{ $serialNumber }}</td>
+                                            <td>{{ $data->title }}</td>
+                                            <td>{{ $data->description }}</td>
+                                            <td>
+                                                @if($data->status == 0)
+                                                    <span class="badge bg-danger">Inactive</span>
+                                                @else
+                                                    <span class="badge bg-success">Active</span>
+                                                @endif
+                                            </td>
+                                            <td class="d-flex justify-content-around">
+                                                <a href="{{ route('admin.skill.edit',$data->id) }}"><i class="fa-regular fa-pen-to-square text-info "></i></a>
+                                                <form method="post" action="{{ route('admin.skill.destroy',$data->id) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <i class="fa-solid fa-trash-can text-danger" onclick="return confirm('Are you confirm to delete?')"></i>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @php
+                                            $serialNumber++;
+                                        @endphp
                                     @endforeach
                                 </tbody>
                                 <tfoot>
