@@ -32,6 +32,7 @@
 
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
+
                                 <thead>
                                     <tr>
                                         <th>Sl No</th>
@@ -45,13 +46,13 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td> Apurbo Roy</td>
-                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dignissimos maiores ad commodi veritatis amet?</td>
-                                        <td>image</td>
+                                        <td>Apurbo Roy </td>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, necessitatibus?</td>
+                                        <td> Image</td>
                                         <td>Active</td>
-                                        <td>+ -</td>
+                                        <td>Edit Delete</td>
                                     </tr>
-                                   
+                                    
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -59,6 +60,7 @@
                                         <th>Browser</th>
                                         <th>Platform(s)</th>
                                         <th>Engine version</th>
+                                        <th>CSS grade</th>
                                         <th>CSS grade</th>
                                     </tr>
                                 </tfoot>
