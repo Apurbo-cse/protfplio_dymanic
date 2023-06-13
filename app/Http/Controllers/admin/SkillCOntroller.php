@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\r;
 use Illuminate\Http\Request;
+use App\Models\Skill;
 
-class SkillCOntroller extends Controller
+class SkillController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,9 @@ class SkillCOntroller extends Controller
      */
     public function index()
     {
-        //
+        $skill= Skill::orderBy('created_at', 'ASC')->paginate(20);
+        return view('admin.pages.skill.index',compact('skill'));
+    
     }
 
     /**
@@ -25,7 +27,7 @@ class SkillCOntroller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.skill.create');
     }
 
     /**
@@ -36,16 +38,31 @@ class SkillCOntroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description' => 'required',
+            'status'=>'required|in:'.Skill::ACTIVE_STATUS.','.Skill::INACTIVE_STATUS,
+        ]);
+    
+        $data = new Skill();
+        $data->title = $request->input('title');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+
+
+        $data->save();
+        session()->flash('success', 'skill Created Successfully');
+        return redirect()->route('admin.skill.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\r  $r
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(r $r)
+    public function show($id)
     {
         //
     }
@@ -53,34 +70,53 @@ class SkillCOntroller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\r  $r
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(r $r)
+    public function edit($id)
     {
-        //
+        $data = Skill::findOrFail($id);
+        return view('admin.pages.skill.edit',compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\r  $r
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, r $r)
+    public function update(Request $request, $id)
     {
-        //
+        $data = Skill::findOrFail($id);
+        $data->title = $request->input('title');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+        $request->validate([
+            'title'=>'required',
+            'status'=>'required|in:'.Skill::ACTIVE_STATUS.','.Skill::INACTIVE_STATUS,
+
+        ]);
+
+        $data->save();
+        session()->flash('success', 'Data Updated Successfully');
+        return redirect()->route('admin.skill.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\r  $r
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(r $r)
+    public function destroy($id)
     {
-        //
+        $data = Skill::findOrFail($id);
+
+    $data->delete();
+
+    session()->flash('success', ' Deleted Successfully');
+    return redirect()->route('admin.skill.index');
     }
 }
