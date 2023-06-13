@@ -63,8 +63,8 @@
                                         <div class="col-10">
                                             <div class="mt-4 pt-2">
                                                 <h5>{{ $data->title}}</h5>
-                                                <small>{{ $data->address}}</small>
-                                                <p class="text-muted fs-15 fw-bold">{{$data->company}} </p>
+                                                <p class="text-muted fs-15 fw-bold p-0 m-0">{{$data->company}} </p>
+                                                <small  class="text-muted p-0 m-0"><small>{{ $data->location}}</small></small>
                                                 <p class="text-muted fs-15">{!! $data->description!!}</p>
                                             </div>
                                         </div>
