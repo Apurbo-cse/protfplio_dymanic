@@ -37,19 +37,17 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                            <div class="tab-pane fade mb-4 show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab">
-
-                                <div class="skill-item mt-4 pt-2">
+                                @foreach ( $skill as $data)
+                                <div class="skill-item  pt-2">
                                     <div class="">
-                                        <h6>Language :</h6>
-                                        <small>
-                                            JavaScript, HTML, CSS, SCSS (SASS), SQL
-                                            (Basic), PHP(prior experience), C
-                                            programming.</small>
+                                        <h6>{{ $data->title}} :</h6>
+                                        <small>{{ $data->description}}</small>
                                     </div>
                                 </div>
-                                <div class="skill-item pt-2">
+                                @endforeach
+                                <!-- <div class="skill-item pt-2">
                                     <div class="">
                                         <h6>Libraries & Frameworks :</h6>
                                         <small>React JS, React Native, Laravel, Bootstrap,
@@ -72,7 +70,7 @@
                                         <small>Effective communication, Critical and
                                             Creative Thinking, Willingness to learn.</small>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel"
