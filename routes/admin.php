@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\SkillController;
+use App\Http\Controllers\admin\EducationController;
 
 
 
@@ -26,5 +27,6 @@ Route::get('/dashboard', function () {
 Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth']], function () {
     Route::resource('home', HomeController::class);
     Route::resource('skill', SkillController::class);
+    Route::resource('education', EducationController::class);
 
 });
