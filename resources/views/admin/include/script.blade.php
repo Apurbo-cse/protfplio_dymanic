@@ -38,6 +38,24 @@
 <script src="{{ asset('admin/plugins/jquery-validation/additional-methods.min.js')}}"></script>
 
 
+<script src="{{ asset('admin/plugins/codemirror/codemirror.js')}}"></script>
+<script src="{{ asset('admin/plugins/codemirror/mode/css/css.js')}}"></script>
+<script src="{{ asset('admin/plugins/codemirror/mode/xml/xml.js')}}"></script>
+<script src="{{ asset('admin/plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
+
+
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+</script>
 
 
 <script>
