@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Home;
 use App\Models\Skill;
+use App\Models\Education;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,7 @@ class HomeController extends Controller
     {
         $home = DB::table('homes')->where('status', '1')->get();
         $skill = DB::table('skills')->where('status', '1')->get();
-        return view('frontend.master',compact('home', 'skill'));
+        $education = DB::table('educations')->where('status', '1')->get();
+        return view('frontend.master',compact('home', 'education'));
     }
 }
