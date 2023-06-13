@@ -23,6 +23,6 @@ Route::get('/dashboard', function () {
 
 
 Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth']], function () {
-
+    Route::resource('home', HomeController::class);
 
 });

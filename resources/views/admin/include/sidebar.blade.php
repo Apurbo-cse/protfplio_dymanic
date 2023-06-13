@@ -42,7 +42,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a class="nav-link">
                     <i class="nav-icon fas fa-chart-pie"></i>
                     <p>
                         Home
@@ -51,13 +51,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/charts/chartjs.html" class="nav-link">
+                        <a href="{{route('admin.home.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Index</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/charts/flot.html" class="nav-link">
+                        <a href="{{route('admin.home.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Create</p>
                         </a>
