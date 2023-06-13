@@ -32,42 +32,72 @@
                         </div>
 
 
-                        <form id="quickForm" action="{{route('admin.home.store')}}" method="post" enctype="multipart/form-data">
-                        @csrf
+                        <form id="quickForm"
+                            action="{{ route('admin.home.update', $data->id) }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('put')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Enter email">
+                                    <input type="text" value="{{ $data->name }}" name="name" class="form-control"
+                                        id="exampleInputEmail1" placeholder="Enter email">
+                                    @error('name')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Description</label>
-                                    <input type="text" name="description" class="form-control"
-                                        placeholder="Enter description">
+                                    <input type="text" value="{{ $data->description }}" name="description"
+                                        class="form-control" placeholder="Enter description">
+                                    @error('description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputFile">File input</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+
+
+                                            <input type="file" class="custom-file-input" name="image"
+                                                id="exampleInputFile">
                                             <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">Upload</span>
                                         </div>
+
+
                                     </div>
+                                    @error('image')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                    @if($data->image != null)
+                                        <img src="{{ asset($data->image) }}" width="20%" height="20%">
+                                    @endif
                                 </div>
+
+
                                 <div class="form-group d-flex">
+
+
                                     <div class="custom-control custom-radio">
-                                        <input class="custom-control-input " type="radio" id="r1" name="status" value="1" checked>
+                                        <input class="custom-control-input " type="radio" id="r1" name="status"@if($data->status == '1') checked   @endif type="radio" id="active" value="1" name="status">
                                         <label for="r1" class="custom-control-label">Active</label>
                                     </div>
+
                                     <div class="custom-control custom-radio mx-2">
-                                        <input class="custom-control-input custom-control-input-danger custom-control-input-outline"
-                                            type="radio" id="r0" value="0" name="status">
+                                        <input
+                                            class="custom-control-input custom-control-input-danger custom-control-input-outline"
+                                            type="radio" id="r0" value="0" name="status" @if($data->status == '0') checked   @endif type="radio" id="inactive" value="0" name="status">
                                         <label for="r0" class="custom-control-label">Inactive</label>
                                     </div>
+                                    @error('status')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+
                                 </div>
 
 
