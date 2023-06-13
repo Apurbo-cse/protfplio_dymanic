@@ -1,97 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Dashboard</title>
 
-    @include('admin.layout._header_link')
-
-    @stack('custom-css')
-
+    @include('admin.include.header_link')
 
 </head>
 
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
 
-<body class="fixed-left">
-
-    <!-- Begin page -->
-    <div id="wrapper">
-
-        <!-- Top Bar Start -->
-        @include('admin.layout._top_bar')
-        <!-- Top Bar End -->
-
-        <!-- ========== Left Sidebar Start ========== -->
-
-        <div class="left side-menu">
-            @include('admin.layout._left_side')
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
         </div>
-        <!-- Left Sidebar End -->
 
-        <!-- Start right Content here -->
+        @include('admin.include.navbar')
 
-        <div class="content-page">
-            <!-- Start content -->
-            <div class="content">
-                <div class="container">
-                    @yield('main-content')
-                </div> <!-- container -->
 
-            </div> <!-- content -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-            @include('admin.layout._footer')
+           @include('admin.include.sidebar')
 
-        </div>
-        <!-- End Right content here -->
+        </aside>
+
+        <!-- Content -->
+        @yield('content')
+        <!-- Content End -->
+
+        <footer class="main-footer">
+            @include('admin.include.footer')
+        </footer>
+
+        <aside class="control-sidebar control-sidebar-dark">
+
+        </aside>
 
     </div>
-    <!-- END wrapper -->
 
-
-    @include('admin.layout._footer_link')
-
-    <!-- Datatables-->
-    @stack('datatable-scripts')
-
-    <!-- Datatables-->
-    <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/buttons.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/jszip.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.fixedHeader.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
-
-    <!-- Datatable init js -->
-    <script src="{{ asset('admin/pages/datatables.init.js') }}"></script>
-
-    <script src="{{ asset('/') }}admin/pages/dashborad.js"></script>
-    <script src="{{ asset('/') }}admin/js/app.js"></script>
-
-    <script src="{{ asset('admin/js/toastr.min.js') }}"></script>
-    <script src="{{ asset('admin/js/sweetalert2@10.js') }}"></script>
-
-    {!! Toastr::message() !!}
-
-    <script type="text/javascript">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                toastr.error('{{ $error }}', 'Error', {
-                    closeButton: true,
-                    progressBar: true
-                })
-            @endforeach
-        @endif
-    </script>
-
-    @stack('scripts')
-
+    @include('admin.include.script')
 </body>
-
 </html>
