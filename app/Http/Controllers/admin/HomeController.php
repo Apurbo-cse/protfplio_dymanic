@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Home;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.home.create');
     }
 
     /**
@@ -35,7 +36,30 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Home();
+        $data->name = $request->input('name');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $path ='images/home';
+            $file_name = time() . $file->getClientOriginalName();
+            $file->move($path, $file_name);
+            $data['image']= $path.'/'. $file_name;
+        }
+
+        $request->validate([
+            'name'=>'required',
+
+            'status'=>'required|in:'.Home::ACTIVE_STATUS.','.Home::INACTIVE_STATUS,
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:2048',
+        ]);
+
+        $data->save();
+        session()->flash('success', 'Home Created Successfully');
+        return redirect()->route('admin.home.index');
     }
 
     /**
