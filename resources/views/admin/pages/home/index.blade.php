@@ -1,6 +1,5 @@
 @extends('admin.master')
 
-
 @section('content')
 <div class="content-wrapper">
 
@@ -45,32 +44,31 @@
                                 </thead>
                                 <tbody>
                                     @foreach($homes as $data)
-                                        <tr>
-                                            <td>1</td>
-                                            <td>{{ $data->name }}</td>
-                                            <td>{{ $data->description }}</td>
-                                            <td><img src="{{ asset($data->image) }}" width="100%" alt=""></td>
-                                            <td>
-                                                @if($data->status == 0)
-                                                    <span class="badge bg-danger">Inactive</span>
-                                                @else
-                                                    <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
-                                            <td class="d-flex justify-content-around">
-                                                <a
-                                                    href="{{ route('admin.home.edit',$data->id) }}"><i
-                                                        class="fa-regular fa-pen-to-square text-info "></i></a>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{ $data->name }}</td>
+                                        <td>{{ $data->description }}</td>
+                                        <td><img src="{{ asset($data->image) }}" width="100%" alt=""></td>
+                                        <td>
+                                            @if($data->status == 0)
+                                            <span class="badge bg-danger">Inactive</span>
+                                            @else
+                                            <span class="badge bg-success">Active</span>
+                                            @endif
+                                        </td>
+                                        <td class="d-flex justify-content-around">
+                                            <a href="{{ route('admin.home.edit',$data->id) }}"><i
+                                                    class="fa-regular fa-pen-to-square text-info "></i></a>
 
-                                                <form  method="post"
-                                                    action="{{ route('admin.home.destroy',$data->id) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <i class="fa-solid fa-trash-can text-danger"
-                                                        onclick="return confirm('Are you confirm to delete?')"></i>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                            <form method="post"
+                                                action="{{ route('admin.home.destroy',$data->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <i class="fa-solid fa-trash-can text-danger"
+                                                    onclick="return confirm('Are you confirm to delete?')"></i>
+                                            </form>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>

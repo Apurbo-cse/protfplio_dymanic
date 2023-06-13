@@ -15,8 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $homes= Home::orderBy('created_at', 'ASC')->paginate(20);
-        return view('admin.pages.home.index',compact('homes'));
+        $homes = Home::orderBy('created_at', 'ASC')->paginate(20);
+        return view('admin.pages.home.index', compact('homes'));
     }
 
     /**
@@ -43,12 +43,12 @@ class HomeController extends Controller
             'status' => 'required|in:active,inactive',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:5048',
         ]);
-    
+
         $data = new Home();
         $data->name = $request->input('name');
         $data->description = $request->input('description');
         $data->status = $request->input('status');
-    
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $path = 'images/home';
@@ -56,9 +56,9 @@ class HomeController extends Controller
             $file->move($path, $file_name);
             $data->image = $path . '/' . $file_name;
         }
-    
+
         $data->save();
-    
+
         session()->flash('success', 'Home Created Successfully');
         return redirect()->route('admin.home.index');
     }
@@ -83,7 +83,7 @@ class HomeController extends Controller
     public function edit($id)
     {
         $data = Home::findOrFail($id);
-        return view('admin.pages.home.edit',compact('data'));
+        return view('admin.pages.home.edit', compact('data'));
     }
 
     /**
@@ -106,7 +106,7 @@ class HomeController extends Controller
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
             $new_image = $path . '/' . $file_name;
-            
+
             if (file_exists(public_path($data->image))) {
                 unlink(public_path($data->image)); // Delete the previous image
             }
@@ -114,9 +114,8 @@ class HomeController extends Controller
         }
 
         $request->validate([
-            'name'=>'required',
-            'status'=>'required|in:'.Home::ACTIVE_STATUS.','.Home::INACTIVE_STATUS,
-
+            'name' => 'required',
+            'status' => 'required|in:' . Home::ACTIVE_STATUS . ',' . Home::INACTIVE_STATUS,
         ]);
 
         $data->save();
@@ -132,6 +131,16 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Home::findOrFail($id);
+
+        // Delete the image file if it exists
+        if (file_exists(public_path($data->image))) {
+            unlink(public_path($data->image));
+        }
+
+        $data->delete();
+
+        session()->flash('success', 'Home Deleted Successfully');
+        return redirect()->route('admin.home.index');
     }
 }
