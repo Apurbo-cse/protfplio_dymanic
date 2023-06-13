@@ -49,7 +49,7 @@
                                             <td>1</td>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->description }}</td>
-                                            <td><img src="{{ asset($data->image) }}" width="20%" alt=""></td>
+                                            <td><img src="{{ asset($data->image) }}" width="100%" alt=""></td>
                                             <td>
                                                 @if($data->status == 0)
                                                     <span class="badge bg-danger">Inactive</span>

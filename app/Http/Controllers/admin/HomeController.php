@@ -37,28 +37,28 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'status' => 'required|in:active,inactive',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:5048',
+        ]);
+    
         $data = new Home();
         $data->name = $request->input('name');
         $data->description = $request->input('description');
         $data->status = $request->input('status');
-
-        if($request->hasfile('image'))
-        {
+    
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $path ='images/home';
+            $path = 'images/home';
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
-            $data['image']= $path.'/'. $file_name;
+            $data->image = $path . '/' . $file_name;
         }
-
-        $request->validate([
-            'name'=>'required',
-
-            'status'=>'required|in:'.Home::ACTIVE_STATUS.','.Home::INACTIVE_STATUS,
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:2048',
-        ]);
-
+    
         $data->save();
+    
         session()->flash('success', 'Home Created Successfully');
         return redirect()->route('admin.home.index');
     }
@@ -95,7 +95,33 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Home::findOrFail($id);
+        $data->name = $request->input('name');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $path = 'images/home';
+            $file_name = time() . $file->getClientOriginalName();
+            $file->move($path, $file_name);
+            $new_image = $path . '/' . $file_name;
+            
+            if (file_exists(public_path($data->image))) {
+                unlink(public_path($data->image)); // Delete the previous image
+            }
+            $data->image = $new_image;
+        }
+
+        $request->validate([
+            'name'=>'required',
+            'status'=>'required|in:'.Home::ACTIVE_STATUS.','.Home::INACTIVE_STATUS,
+
+        ]);
+
+        $data->save();
+        session()->flash('success', 'Data Updated Successfully');
+        return redirect()->route('admin.home.index');
     }
 
     /**
