@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Education;
 
 class EducationController extends Controller
 {
@@ -14,7 +15,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        $education= Education::orderBy('created_at', 'ASC')->paginate(20);
+        return view('admin.pages.education.index',compact('education'));
     }
 
     /**
@@ -24,7 +26,7 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.education.create');
     }
 
     /**
@@ -35,7 +37,25 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'company' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'status'=>'required|in:'.Education::ACTIVE_STATUS.','.Education::INACTIVE_STATUS,
+        ]);
+    
+        $data = new Education();
+        $data->title = $request->input('title');
+        $data->company = $request->input('company');
+        $data->location = $request->input('location');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+
+        $data->save();
+        session()->flash('success', 'education Created Successfully');
+        return redirect()->route('admin.education.index');
     }
 
     /**
@@ -57,7 +77,8 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Education::findOrFail($id);
+        return view('admin.pages.education.edit',compact('data'));
     }
 
     /**
@@ -69,7 +90,25 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Education::findOrFail($id);
+        $data->title = $request->input('title');
+        $data->company = $request->input('company');
+        $data->location = $request->input('location');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+
+        $request->validate([
+            'title'=>'required',
+            'company' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'status'=>'required|in:'.Education::ACTIVE_STATUS.','.Education::INACTIVE_STATUS,
+
+        ]);
+
+        $data->save();
+        session()->flash('success', 'Data Updated Successfully');
+        return redirect()->route('admin.education.index');
     }
 
     /**
@@ -80,6 +119,11 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Education::findOrFail($id);
+
+    $data->delete();
+
+    session()->flash('success', ' Deleted Successfully');
+    return redirect()->route('admin.education.index');
     }
 }
