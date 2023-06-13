@@ -4,8 +4,9 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="mt-5">
-                        <a class=" logo text-uppercase" href="index.html">
-                            <img src="images/logo.png')}}" class="logo-light" alt="" height="32">purbo Roy
+                        <a class=" logo text-uppercase" href="/">
+                        <h5 class="text-white">APURBO ROY</h5>
+                            <!-- <img src="images/logo.png')}}" class="logo-light" alt="" height="32">purbo Roy -->
                         </a>
                         <p class="fs-15 text-white-50 mt-4">Passionate developer living in Dhaka with over 1.9 years of solid experience dedicated to creating web applications and
                             mobile application. Specializing in Reactjs, React Native and laravel development. Self-motivated, responsible, creative,
