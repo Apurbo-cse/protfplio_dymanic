@@ -15,6 +15,11 @@ class CreateEducationTable extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('company');
+            $table->string('location');
+            $table->longText('description');
+            $table->string('status');
             $table->timestamps();
         });
     }
