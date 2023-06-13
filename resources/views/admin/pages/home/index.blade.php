@@ -25,8 +25,8 @@
                 <div class="col-12">
 
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
+                        <div class="card-header d-flex justify-content-end">
+                            <h3 class="card-title"><button class="btn btn-info ">New Create</button></h3>
                         </div>
 
                         <div class="card-body">
