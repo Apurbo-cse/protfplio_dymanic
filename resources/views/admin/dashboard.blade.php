@@ -1,7 +1,5 @@
 @extends('admin.master')
 
-<blade
-    section|(%26%2339%3Btitle%26%2339%3B%2C%20%26%2339%3BPalli%20Crafts%20Ltd%20-%20Admin%20Dashboard%26%2339%3B)%0D />
 
 @section('content')
 <div class="content-wrapper">
