@@ -39,6 +39,7 @@
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade mb-4 show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab">
+
                                 @foreach ( $skill as $data)
                                 <div class="skill-item  pt-2">
                                     <div class="">
@@ -47,32 +48,9 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <!-- <div class="skill-item pt-2">
-                                    <div class="">
-                                        <h6>Libraries & Frameworks :</h6>
-                                        <small>React JS, React Native, Laravel, Bootstrap,
-                                            React-Bootstrap, jQuery, Redux, Express
-                                            (basic), Mongoose (basic).
-                                        </small>
-                                    </div>
-                                </div>
-
-                                <div class="skill-item pt-2">
-                                    <div class="">
-                                        <h6>Version Control :</h6>
-                                        <small>GIT, GitHub.</small>
-                                    </div>
-                                </div>
-
-                                <div class="skill-item pt-2">
-                                    <div class="">
-                                        <h6>Soft Skills :</h6>
-                                        <small>Effective communication, Critical and
-                                            Creative Thinking, Willingness to learn.</small>
-                                    </div>
-                                </div> -->
-
+                               
                             </div>
+                            
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                 aria-labelledby="pills-profile-tab">
 
