@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Validation</h1>
+                    <h1>Education Update</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">skill</a></li>
-                        <li class="breadcrumb-item active">Validation</li>
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Education</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
                         </div>
-                        <form id="quickForm" action="{{ route('admin.skill.store') }}" method="post"
+                        <form id="quickForm" action="{{ route('admin.education.store') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
