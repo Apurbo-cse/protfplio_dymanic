@@ -13,35 +13,37 @@
                                         <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
                                         <div class="home-title mb-0 fw-bold h1">
                                             <span class="typewrite " data-period="2000"
-                                                data-type='[ "Apurbo Roy","Software Developer","Javascript | Reactjs | React Native","as" ]'>
+                                                data-type='[ {{$data->name}} ]'>
                                                 <span class="wrap text-dark"></span>
                                             </span>
                                         </div>
-                                        <p class="mt-3 text-muted">Passionate developer living in Dhaka with over 1.9 years of solid experience dedicated to creating web applications and mobile application. Specializing in Reactjs, React Native and laravel development. Self-motivated, responsible, creative, team-worker, and holds a Bachelor’s degree in Computer Science & Engineering. Looking forward to a promising career in the position of Software Engineer/Developer.</p>
+                                        <p class="mt-3 text-muted">{{$data->description}}</p>
 
                                         <div class="icon-item mt-4">
                                             <div class="d-flex">
-                                                <a href="#">
+                                                <a href="https://www.facebook.com/apurbo.cse" target="_blank">
                                                     <div class="social-icon facebook avatar-sm">
                                                         <i class="mdi mdi-facebook"></i>
                                                     </div>
                                                 </a>
-                                                <a href="#">
-                                                    <div class="social-icon instagram avatar-sm">
-                                                        <i class="mdi mdi-instagram"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="#">
-                                                    <div class="social-icon twitter avatar-sm">
-                                                        <i class="mdi mdi-twitter"></i>
-                                                    </div>
-                                                </a>
-                                                <a href="#">
+                                                
+                                                <a href="https://www.linkedin.com/in/apurbocse/" target="_blank">
                                                     <div class="social-icon linkedin avatar-sm">
                                                         <i class="mdi mdi-linkedin"></i>
                                                     </div>
                                                 </a>
-                                                <a href="#">
+                                                
+                                                <a href="#" target="_blank">
+                                                    <div class="social-icon instagram avatar-sm">
+                                                        <i class="mdi mdi-instagram"></i>
+                                                    </div>
+                                                </a>
+                                                <a href="#" target="_blank">
+                                                    <div class="social-icon twitter avatar-sm">
+                                                        <i class="mdi mdi-twitter"></i>
+                                                    </div>
+                                                </a>
+                                                <a href="#" target="_blank">
                                                     <div class="social-icon pinterest avatar-sm">
                                                         <i class="mdi mdi-pinterest"></i>
                                                     </div>
@@ -53,7 +55,7 @@
                                         <div class="home-link d-inline-block mt-5">
                                             <div class="d-flex align-items-center">
                                                 <div class="btn-link ">
-                                                    <a href="#" class="text-dark h6">
+                                                    <a href="#" target="_blank" class="text-dark h6">
                                                         <div class="read-link btn-link-warning"><span>See my work
                                                             </span></div>
                                                     </a>
