@@ -59,46 +59,18 @@
                                         <div class="col-2">
                                             <div class="border-left"></div>
                                         </div>
+                                        @foreach ( $education as $data)
                                         <div class="col-10">
                                             <div class="mt-4 pt-2">
-                                                <h5>Developer</h5>
-                                                <p class="text-muted fs-15 fw-bold">TFP Solutions Bangladesh Ltd. ( Sep.
-                                                    2021 - present) </p>
-                                                <p class="text-muted fs-15">The front end of the application has been
-                                                    created through attractive
-                                                    visual design. Software testing and troubleshooting, debugging and
-                                                    upgrading software to ensure responsiveness and efficiency. Pixel
-                                                    perfect implementation of user interface.
-                                                    Integrating front end UI with built in API. Meet both technical and
-                                                    consumer needs. Created and maintained React Native components,
-                                                    screens and features for mobile apps.
-                                                    Collaborated with other developers to implement new features in a
-                                                    manner consistent with existing codebase conventions.</p>
+                                                <h5>{{ $data->title}}</h5>
+                                                <small>{{ $data->address}}</small>
+                                                <p class="text-muted fs-15 fw-bold">{{$data->company}} </p>
+                                                <p class="text-muted fs-15">{!! $data->description!!}</p>
                                             </div>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    <div class="row position-relative">
-                                        <div class="col-2">
-                                            <div class="border-left"></div>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="mt-4 pt-2">
-                                                <h5>Developer</h5>
-                                                <p class="text-muted fs-15 fw-bold">TFP Solutions Bangladesh Ltd. ( Sep.
-                                                    2021 - present) </p>
-                                                <p class="text-muted fs-15">The front end of the application has been
-                                                    created through attractive
-                                                    visual design. Software testing and troubleshooting, debugging and
-                                                    upgrading software to ensure responsiveness and efficiency. Pixel
-                                                    perfect implementation of user interface.
-                                                    Integrating front end UI with built in API. Meet both technical and
-                                                    consumer needs. Created and maintained React Native components,
-                                                    screens and features for mobile apps.
-                                                    Collaborated with other developers to implement new features in a
-                                                    manner consistent with existing codebase conventions.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
 
                             </div>
