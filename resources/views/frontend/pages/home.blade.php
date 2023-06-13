@@ -7,6 +7,7 @@
                         
                         <div class="item">
                             <div class="row align-items-center">
+                            @foreach ( $home as $data)
                                 <div class="col-lg-6">
                                     <div class="content-item">
                                         <p class="text-warning fw-semibold mb-0">Hello! I AM</p>
@@ -68,9 +69,10 @@
 
                                 <div class="col-lg-6">
                                     <div class="my-image">
-                                        <img src="{{asset('frontend/images/apubro.png')}}" alt="" class="img-fluid">
+                                        <img src="{{asset($data->image)}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
+                            @endforeach
                             </div>
                         </div>
                     </div>
