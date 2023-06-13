@@ -29,3 +29,14 @@
 <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min2167.css?v=3.2.0') }}">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+
+
+
+<link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/codemirror/codemirror.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/codemirror/theme/monokai.css') }}">
+
+<link rel="stylesheet" href="{{ asset('admin/plugins/simplemde/simplemde.min.html') }}">
