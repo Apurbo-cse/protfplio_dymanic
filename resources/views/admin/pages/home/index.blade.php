@@ -34,22 +34,22 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                        <th>Sl No</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td> 4</td>
-                                        <td>X</td>
+                                        <td>1</td>
+                                        <td> Apurbo Roy</td>
+                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dignissimos maiores ad commodi veritatis amet?</td>
+                                        <td>image</td>
+                                        <td>Active</td>
+                                        <td>+ -</td>
                                     </tr>
                                    
                                 </tbody>
