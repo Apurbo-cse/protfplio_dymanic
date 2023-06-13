@@ -53,7 +53,7 @@
                                             <td>{{ $data->title }}</td>
                                             <td>{{ $data->company }}</td>
                                             <td>{{ $data->location }}</td>
-                                            <td>{{ $data->description }}</td>
+                                            <td>{!! $data->description !!}</td>
                                             <td>
                                                 @if($data->status == 0)
                                                     <span class="badge bg-danger">Inactive</span>
